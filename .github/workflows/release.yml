@@ -3,6 +3,11 @@ name: Release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Existing release version to rebuild assets for (e.g. 0.1.2)
+        required: true
 
 permissions:
   contents: write
@@ -23,7 +28,7 @@ jobs:
   # submit_for_review stays false until that TODO in sunpebble/ci is wired.
   appgallery:
     needs: release-please
-    if: needs.release-please.outputs.release_created == 'true'
+    if: needs.release-please.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch'
     uses: sunpebble/ci/.github/workflows/harmony-appgallery.yml@v2
     with:
       app_subpath: apps/steady
@@ -35,5 +40,5 @@ jobs:
       submit_for_review: false
       agc_upload: false
       agc_app_id: "6917610271813691310"
-      version: ${{ needs.release-please.outputs.version }}
+      version: ${{ github.event_name == 'workflow_dispatch' && inputs.version || needs.release-please.outputs.version }}
     secrets: inherit
