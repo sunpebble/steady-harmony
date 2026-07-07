@@ -33,6 +33,7 @@ jobs:
       compatible_version: "23"
       sdk_api_level: "23"
       submit_for_review: false
+      agc_upload: false
       agc_app_id: "6917610271813691310"
       version: ${{ needs.release-please.outputs.version }}
     secrets: inherit
