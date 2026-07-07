@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@v5
+
+  # Runs only when a release PR is merged. First AGC submission is manual
+  # (Publishing API can't submit an app that has never been released), so
+  # submit_for_review stays false until that TODO in sunpebble/ci is wired.
+  appgallery:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    uses: sunpebble/ci/.github/workflows/harmony-appgallery.yml@v2
+    with:
+      app_subpath: apps/steady
+      bundle_name: com.sunpebble.steady
+      module: entry
+      key_alias: harmony
+      compatible_version: "23"
+      sdk_api_level: "23"
+      submit_for_review: false
+      agc_app_id: "6917610271813691310"
+      version: ${{ needs.release-please.outputs.version }}
+    secrets: inherit
