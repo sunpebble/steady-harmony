@@ -1,6 +1,7 @@
 export { SunAppManifest, SunColor, SunMode, SunRadius, SunSpacing, SunType } from './tokens/SunTheme'
 export { SunButton, SunButtonRole } from './components/SunButton'
 export { SunEllipsisText } from './components/SunEllipsisText'
+export { SunFitText } from './components/SunFitText'
 export { SunCard } from './components/SunCard'
 export { SunEmptyState } from './components/SunEmptyState'
 export { SunListRow } from './components/SunListRow'
