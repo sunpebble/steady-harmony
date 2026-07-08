@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/sunpebble/steady-harmony/compare/v0.1.2...v0.2.0) (2026-07-08)
+
+
+### Features
+
+* sync V2 state migration from harmony-kit ([0281219](https://github.com/sunpebble/steady-harmony/commit/02812192ce8511ef792416053b874c5b91ee6d65))
+
 ## [0.1.2](https://github.com/sunpebble/steady-harmony/compare/v0.1.1...v0.1.2) (2026-07-07)
 
 
