@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/sunpebble/steady-harmony/compare/v0.2.0...v0.2.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* layered launcher icon + RESIZE keyboard + safe-area inset timing for AGC re-review ([f72eeb5](https://github.com/sunpebble/steady-harmony/commit/f72eeb5e7570fa406384d75abbf31c56d4c35bbe))
+
 ## [0.2.0](https://github.com/sunpebble/steady-harmony/compare/v0.1.2...v0.2.0) (2026-07-08)
 
 
