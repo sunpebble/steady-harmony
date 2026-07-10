@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/sunpebble/steady-harmony/compare/v0.2.1...v0.2.2) (2026-07-10)
+
+
+### Bug Fixes
+
+* address AppGallery review — reminders, delete UX, FAB overlap ([988f204](https://github.com/sunpebble/steady-harmony/commit/988f2044ff4c0d25cac70f9a858e561f080b611a))
+
 ## [0.2.1](https://github.com/sunpebble/steady-harmony/compare/v0.2.0...v0.2.1) (2026-07-08)
 
 
